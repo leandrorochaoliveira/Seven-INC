@@ -2,8 +2,9 @@
   "compilerOptions": {
     "target": "ESNext",
     "useDefineForClassFields": true,
+    "useUnknownInCatchVariables": false,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "allowJs": false,
+    "allowJs": true,
     "skipLibCheck": true,
     "esModuleInterop": false,
     "allowSyntheticDefaultImports": true,
@@ -15,13 +16,14 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
+
     "rootDirs": ["src", "tests"],
     "baseUrl": "src",
     "paths": {
       "@/*": ["*"],
       "@/tests/*": ["../tests/*"]
-    },
+    }
   },
-  "include": ["src"],
+  "include": ["src", "tests"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

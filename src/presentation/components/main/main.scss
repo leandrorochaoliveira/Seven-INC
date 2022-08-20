@@ -1,0 +1,25 @@
+.bodyWrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 4px solid #22305a;
+  background: rgb(49 122 189 / 12%);
+  flex-grow: 1;
+  overflow-y: auto;
+}
+.bodyContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex-grow: 1;
+  padding: 24px 0px;
+  overflow: auto;
+  // background: #e9ebf2;
+}
+#main {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}

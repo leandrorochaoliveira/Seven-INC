@@ -1,0 +1,15 @@
+.headerWrap {
+  display: flex;
+  justify-content: center;
+  border-bottom: 4px solid #22305a;
+
+  .headerContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100%;
+    flex-grow: 1;
+    padding: 24px 0px;
+
+  }
+}

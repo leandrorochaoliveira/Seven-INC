@@ -1,0 +1,46 @@
+.employee-list-item {
+  display: flex;
+  // flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  @media only screen and (min-device-width: 768px) {
+    display: grid; 
+    grid-template-columns: 50px 2fr 2fr 1fr 180px;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+    "show name contact professional actions";
+    gap: 16px 0px;
+    grid-auto-flow: row;
+   
+  }
+ 
+  
+    border-radius: 4px;
+    box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+    padding: 8px;
+    margin: 4px 0;
+    background: #fff;
+}
+
+.employee-list-item-show { 
+  grid-area: show;
+ }
+.employee-list-item-name {
+   grid-area: name; 
+   flex: 0 0 calc(100% - 40px); 
+  }
+.employee-list-item-contact {
+   grid-area: contact; 
+   flex: 0 0 50%;
+  }
+.employee-list-item-professional {
+   grid-area: professional; 
+   flex: 0 0 50%;
+  }
+.employee-list-item-actions { 
+  flex: 0 0 100%;
+  grid-area: actions;
+  display: flex;
+  justify-content: space-between;
+}
+
