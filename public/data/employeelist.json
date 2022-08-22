@@ -1,0 +1,26 @@
+[
+    {
+      "id": 1,
+      "name": "Employees 1",
+      "email": "Employeesemail@gmail.com",
+      "phone": "123123123123",
+      "salary": "124123",
+      "created_at": "2022-08-20"
+    },
+    {
+      "id": 2,
+      "name": "Employees 2",
+      "email": "Employeesemail@gmail.com",
+      "phone": "123123123123",
+      "salary": "124123",
+      "created_at": "2022-08-20"
+    },
+    {
+      "id": 3,
+      "name": "Teste Filtro 3",
+      "email": "Employeesemail@gmail.com",
+      "phone": "123123123123",
+      "salary": "124123",
+      "created_at": "2022-08-20"
+    }
+  ]

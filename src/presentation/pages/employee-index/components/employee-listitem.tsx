@@ -28,14 +28,14 @@ return (
       {phone}</small>
     </div>
     <div className="employee-list-item-professional">
-      <small>{salary}<br />
-      {moment(created_at).format('DD/MM/YYYY')}</small>
+      <small>Salario: {salary}<br />
+      Contratação: {moment(created_at).format('DD/MM/YYYY')}</small>
     </div>
     <div className="employee-list-item-actions">
       
       <Button color="secondary" variant="outlined" startIcon={<EditOutlinedIcon />}
         onClick={() => {
-          navigate(`/employee/edit/${id}`);
+          navigate(`/employee/edit/${id}`); 
         }}>
         Editar
       </Button>

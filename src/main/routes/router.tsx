@@ -1,10 +1,5 @@
-/* import { makeLogin, makeSignUp, makeSurveyList, makeSurveyResult } from '@/main/factories/pages'
-import { setCurrentAccountAdapter, getCurrentAccountAdapter } from '@/main/adapters'
-import { PrivateRoute } from '@/main/proxies'
-import { currentAccountState } from '@/presentation/components'
- */
-
-import { EmployeeIndex, EmployeeCreate, EmployeeShow, EmployeeEdit} from '@/presentation/pages';
+import { MakeEmployeeIndex } from '@/main/factories/pages'
+import { EmployeeCreate, EmployeeShow, EmployeeEdit} from '@/presentation/pages';
 
 import {
   BrowserRouter,
@@ -35,7 +30,7 @@ const Router = () => {
     <ThemeProvider theme={theme}>
       <BrowserRouter>
         <Routes>
-          <Route path="/"  element={<EmployeeIndex />}/>
+          <Route path="/" element={<MakeEmployeeIndex />}/>
           <Route path="employee/create"  element={<EmployeeCreate />}/>
           <Route path="employee/:id" element={<EmployeeShow />} />
           <Route path="employee/edit/:id" element={<EmployeeEdit />} />

@@ -1,11 +1,12 @@
 import { HttpClient, HttpStatusCode } from '@/data/protocols/http'
 import { UnexpectedError, AccessDeniedError } from '@/domain/errors'
 import { LoadEmployeeList } from '@/domain/usecases'
+import { EmployeeListModel } from '@/data/models'
 
-export class RemoteLoadSurveyList implements LoadEmployeeList {
+export class RemoteloadEmployeeList implements LoadEmployeeList {
   constructor (
     private readonly url: string,
-    private readonly httpClient: HttpClient<RemoteLoadSurveyList.Model[]>
+    private readonly httpClient: HttpClient<EmployeeListModel[]>
   ) {}
 
   async loadAll (): Promise<LoadEmployeeList.Model[]> {
@@ -15,22 +16,10 @@ export class RemoteLoadSurveyList implements LoadEmployeeList {
     })
     const remoteEmployees = httpResponse.body || []
     switch (httpResponse.statusCode) {
-      case HttpStatusCode.ok: return remoteEmployees.map(remoteEmployee => ({
-        ...remoteEmployee,
-        date: new Date(remoteEmployee.date)
-      }))
+      case HttpStatusCode.ok: return remoteEmployees
       case HttpStatusCode.noContent: return []
       case HttpStatusCode.forbidden: throw new AccessDeniedError()
       default: throw new UnexpectedError()
     }
-  }
-}
-
-export namespace RemoteLoadSurveyList {
-  export type Model = {
-    id: string
-    question: string
-    date: string
-    didAnswer: boolean
   }
 }

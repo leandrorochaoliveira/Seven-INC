@@ -4,9 +4,11 @@ export interface LoadEmployeeList {
 
 export namespace LoadEmployeeList {
   export type Model = {
-    id: string
-    question: string
-    date: Date
-    didAnswer: boolean
+    id: number
+    name: string
+    email: string
+    phone: string
+    salary: string
+    created_at: string
   }
 }
