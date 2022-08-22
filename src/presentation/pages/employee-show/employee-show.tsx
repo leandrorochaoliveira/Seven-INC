@@ -4,6 +4,7 @@ import { Grid, Button, Box } from '@mui/material'
 import EditOutlinedIcon from '@mui/icons-material/EditOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import { useState } from 'react';
+import moment from 'moment'
 
 const EmployeeShow = () => {
   let navigate = useNavigate();
@@ -23,7 +24,6 @@ const EmployeeShow = () => {
       <Grid container spacing={2}>
         <Grid item xs={12} sm={8}>
           <div>
-            {employee.id}
             <p>
               <strong>Nome:</strong><br />
               {employee.name}
@@ -42,7 +42,7 @@ const EmployeeShow = () => {
             </p>
             <p>
               <strong>Data de nascimento:</strong><br />
-              {employee.birth_date}
+              {moment(employee.birth_date).format('DD/MM/YYYY')}
             </p>
             <p>
               <strong>Salario:</strong><br />
@@ -50,11 +50,14 @@ const EmployeeShow = () => {
             </p>
             <p>
               <strong>Data de contratação:</strong><br />
-              {employee.created_at}
+              {moment(employee.created_at).format('DD/MM/YYYY')}
             </p>
           </div>
         </Grid>
         <Grid item xs={12} sm={4}>
+          <Box style={{ background: '#fff', height: '100%', flexGrow: 1, padding: 8, borderRadius: 8 }}>
+
+          
           <Box sx={{ mb: 2 }}>
             <Button style={{ width: '100%' }} variant="contained" endIcon={<EditOutlinedIcon />}
             onClick={() => {
@@ -71,7 +74,7 @@ const EmployeeShow = () => {
             Excluir
             </Button>
           </Box>
-
+          </Box>
 
         </Grid>
       </Grid>

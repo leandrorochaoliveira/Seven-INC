@@ -1,10 +1,13 @@
-import { Header } from '@/presentation/components'
+import { Main, EmployeeForm } from '@/presentation/components'
 const EmployeeCreate = () => {
   return (
-    <div>
-      <Header></Header>
-      create
-    </div>
+    <Main>
+      <>
+      <h4>Novo Funcionario</h4>
+      <EmployeeForm/>
+      </>
+    </Main>
+
   )
 }
 
