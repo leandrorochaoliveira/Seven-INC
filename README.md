@@ -15,6 +15,8 @@ npm run dev
 # or
 yarn dev
 ```
+Abra [http://localhost:5173](http://localhost:5173) no seu navegador.
+
 
 Para gerar o build do projeto para a pasta dist
 

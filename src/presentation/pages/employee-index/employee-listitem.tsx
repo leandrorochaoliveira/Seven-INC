@@ -9,11 +9,11 @@ import { IconButton, Button, } from '@mui/material';
 import { EmployeeListModel } from '@/data/models'
 
 const EmployeeListItem: React.FC<EmployeeListModel> = ({id, name, email, phone,salary, created_at}: EmployeeListModel) => {
-  let navigate = useNavigate();
+let navigate = useNavigate();
 return (
   <div className="employee-list-item">
     <div className="employee-list-item-show">
-        <IconButton aria-label="visualizar"
+        <IconButton aria-label="visualizar" color="secondary"
           onClick={() => {
             navigate(`/employee/${id}`);
           }}>
@@ -33,7 +33,7 @@ return (
     </div>
     <div className="employee-list-item-actions">
       
-      <Button variant="outlined" startIcon={<EditOutlinedIcon />}
+      <Button color="secondary" variant="outlined" startIcon={<EditOutlinedIcon />}
         onClick={() => {
           navigate(`/employee/edit/${id}`);
         }}>
