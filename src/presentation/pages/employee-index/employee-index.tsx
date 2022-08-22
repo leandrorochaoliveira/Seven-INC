@@ -1,16 +1,20 @@
 import { Main } from '@/presentation/components'
-import { Grid } from '@mui/material';
 import { useEffect, useState, useMemo } from 'react';
 import './employee-index.scss'
 import EmployeeListItem from './employee-listitem'
-import { Button, InputAdornment, TextField } from '@mui/material';
+import { Button, InputAdornment, TextField, Grid } from '@mui/material';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
 import { useNavigate } from "react-router-dom";
 import { EmployeeListModel } from '@/data/models'
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 const EmployeeIndex = () => {
-  let navigate = useNavigate();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('sm'));
+
+  const navigate = useNavigate();
   let [search, setSearch] = useState('')
   let [employees, setEmployees] = useState<EmployeeListModel[]>([]);
 
@@ -69,12 +73,12 @@ const EmployeeIndex = () => {
   return (
     <Main>
       <>
-      <Grid container alignItems="flex-end">
-        <Grid item xs={8}>
+      <Grid container alignItems={matches?"center":"flex-end"} direction={matches?"row":"row-reverse"}>
+        <Grid item xs={12} sm={8}>
           <TextField
-            label="Pesquisar"
+            label="Pesquisar Nome ou E-mail"
             id="Search"
-            sx={{ m: 1, width: '25ch' }}
+            sx={{ mb:1, width: matches ? 300 : '100%' }}
             InputProps={{
               endAdornment: <InputAdornment position="start"><SearchIcon/></InputAdornment>,
             }}
@@ -82,7 +86,7 @@ const EmployeeIndex = () => {
             onChange={(e) => { setSearch(e.target.value)}}
           />
         </Grid>
-        <Grid item xs={4} style={{textAlign: 'right'}}>
+        <Grid item xs={12} sm={4} style={{textAlign: 'right'}}>
           <Button variant="contained" startIcon={<AddIcon />}
           onClick={() => {
             navigate(`/employee/create`);

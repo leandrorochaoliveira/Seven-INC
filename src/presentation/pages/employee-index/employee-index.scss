@@ -3,7 +3,7 @@
   // flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
-  @media only screen and (min-device-width: 768px) {
+  @media screen and (min-width: 768px) {
     display: grid; 
     grid-template-columns: 50px 2fr 2fr 1fr 180px;
     grid-template-rows: 1fr;
@@ -31,11 +31,30 @@
   }
 .employee-list-item-contact {
    grid-area: contact; 
-   flex: 0 0 50%;
+   flex: 0 0 100%;
+   border-bottom: 1px solid rgba(49, 122, 189, 0.12);
+   padding-top: 8px;
+   padding-bottom: 8px;
+   @media screen and (min-width: 768px) {
+    flex: 0 0 50%;
+    border: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+   }
   }
 .employee-list-item-professional {
    grid-area: professional; 
-   flex: 0 0 50%;
+   flex: 0 0 100%;
+   padding-top: 8px;
+   padding-bottom: 8px;
+   margin-bottom: 8px;
+   border-bottom: 1px solid rgba(49, 122, 189, 0.12);
+   @media screen and (min-width: 768px) {
+    flex: 0 0 50%;
+    border: 0;
+    padding-top: 0px;
+    padding-bottom: 0px;
+   }
   }
 .employee-list-item-actions { 
   flex: 0 0 100%;
