@@ -24,11 +24,12 @@ return (
       {name}
     </div>
     <div className="employee-list-item-contact">
-      <small>{email}<br />
+      <small>
+        {email}<br />
       {phone}</small>
     </div>
     <div className="employee-list-item-professional">
-      <small>Salario: {salary}<br />
+      <small>Salario: R$ {salary}<br />
       Contratação: {moment(created_at).format('DD/MM/YYYY')}</small>
     </div>
     <div className="employee-list-item-actions">
